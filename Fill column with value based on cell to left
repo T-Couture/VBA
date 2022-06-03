@@ -3,6 +3,8 @@ Sub PopulateValue()
 ' populating a column based on the column to the left containig values
 ' select the first cell in the column to the left of the column you want to populate
 
+Application.ScreenUpdating = False 'not required but can speed up executing the code
+
 Range("B2").Select 
 
 
@@ -14,5 +16,7 @@ Do Until IsEmpty(ActiveCell)
     ActiveCell.Offset(1, 0).Select
     
 Loop
+
+Application.ScreenUpdating = True 'only if turned off above
 
 End Sub
